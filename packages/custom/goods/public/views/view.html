@@ -1,0 +1,14 @@
+<section data-ng-controller="GoodsController" data-ng-init="findOne()">
+  <span>{{good.created | date:'medium'}}</span> 
+  <span>{{good.user.name}}</span>
+  <h2>{{good.goodsUrl}}</h2>
+  <div data-ng-if="hasAuthorization(good)">
+    <a class="btn" href="/#!/goods/{{good._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn" data-ng-click="remove(good);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div>{{good.content}}</div>
+</section>
